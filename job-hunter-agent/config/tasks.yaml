@@ -29,7 +29,7 @@ job_matching_task:
 
     Keep all original job fields intact. Do not alter or filter out any jobs.
   expected_output: >
-    A JSON object matching the original `JobList` schema, with two additional fields per job:
+    A JSON object matching the original `Job` schema, with two additional fields per job:
     - match_score: integer from 1 to 5
     - reason: a short explanation for the score
   agent: job_matching_agent
