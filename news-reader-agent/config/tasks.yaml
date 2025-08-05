@@ -1,0 +1,13 @@
+translate_task:
+  description: >
+    Translate {sentence} from English to Italian without making mistakes.
+  expected_output: >
+    A well formatted translation from English to Italian using proper capitalization of names and places.
+  agent: translator_agent
+
+retranslate_task:
+  description: >
+    Translate {sentence} from Italian to Greek without making mistakes.
+  expected_output: >
+    A well formatted translation from Italian to Greek using proper capitalization of names and places.
+  agent: translator_agent
