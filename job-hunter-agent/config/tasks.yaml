@@ -1,0 +1,133 @@
+job_extraction_task:
+  description: >
+    Find and extract {level} level {position} jobs in {location}.
+
+    Steps include:
+    1. Use Web Search Tool to search for {level} level {position} jobs in {location}.
+    2. Extract the job listings from the search results.
+    3. Filter out job listings that are not {level} level {position} jobs in {location}.
+  expected_output: >
+    A JSON object matching the `JobList` schema.
+  agent: job_search_agent
+
+job_matching_task:
+  description: >
+    You are an expert in career matching.
+
+    Given a list of extracted jobs (JobList) and the user's resume, evaluate how well each job aligns with the user's:
+    - Tech stack
+    - Role level
+    - Industry and company size preferences
+    - Remote/work flexibility
+    - Contract type
+    - Salary expectations
+    - Keywords and disqualifiers in the resume
+
+    For each job, assign a `match_score` from 1 (poor fit) to 5 (perfect fit), and explain your reasoning.
+
+    Append the `match_score` and a `reason` field to each job in the list.
+
+    Keep all original job fields intact. Do not alter or filter out any jobs.
+  expected_output: >
+    A JSON object matching the original `JobList` schema, with two additional fields per job:
+    - match_score: integer from 1 to 5
+    - reason: a short explanation for the score
+  agent: job_matching_agent
+
+job_selection_task:
+  description: >
+    You are an expert in job selection.
+
+    Given a list of jobs that each contain a `match_score` and a `reason` field (RankedJobList), your task is to:
+    1. Analyze the `match_score` and reasons to determine the **best-fit job** for the user.
+    2. Select the single best job that aligns most closely with the user's preferences, skills, and goals.
+    3. Justify your choice in a concise `reason` field based on resume-job alignment.
+    4. Set the `selected` field to `true` for the top job and `false` for all others.
+
+    Do not change the content of any original job fields (e.g., job_title, company_name, etc.).
+  expected_output: >
+    A JSON object matching the `ChosenJob` schema of the selected job.
+  agent: job_matching_agent
+
+resume_rewriting_task:
+  description: >
+    You are a resume optimization expert.
+
+    Given the user's real resume that is provided as included knowledge source and the selected job (ChosenJob), your task is to **rewrite the existing resume**
+    to **emphasize alignment with the job**, **without fabricating or inflating** any facts.
+
+    Focus on:
+    - Reordering, rewording, and highlighting relevant skills, projects, and achievements
+    - Rewriting the summary and experience bullet points to reflect key job requirements and keywords
+    - Matching the tone, tech focus, and terminology of the job posting
+    - Retaining only real experiences from the user's original resume
+
+    You may remove unrelated content or rephrase titles slightly for clarity, but **you must not add fake companies, skills, dates, or roles**.
+
+  expected_output: >
+    A Markdown-formatted version of the **real user's resume**, rewritten and optimized for the selected job.
+    The resume must remain truthful and grounded in the user's real history.
+
+  agent: resume_optimization_agent
+  output_file: output/rewritten_resume.md
+  create_directory: true
+  markdown: true
+
+company_research_task:
+  description: >
+    You are an expert in company research and interview preparation.
+
+    Given the selected job (ChosenJob), research the hiring company using public web resources.
+    Your goals are to:
+    1. Identify the company's size, industry, mission, values, and recent news.
+    2. Analyze the job listing to infer team structure and product context.
+    3. Suggest potential interview topics and questions the candidate may face.
+    4. Provide a list of insightful questions the candidate can ask during the interview.
+
+    Use the company website, press releases, blogs, social media, and reviews to gather insights.
+  expected_output: >
+    A Markdown file with the following sections:
+    - ## Company Overview
+    - ## Mission and Values
+    - ## Recent News or Changes
+    - ## Role Context and Product Involvement
+    - ## Likely Interview Topics
+    - ## Suggested Questions to Ask
+
+  agent: company_research_agent
+  markdown: true
+  output_file: output/company_research.md
+
+interview_prep_task:
+  description: >
+    You are an interview preparation coach.
+
+    Combine the following information:
+    1. The selected job (ChosenJob)
+    2. The tailored resume (RewrittenResume)
+    3. The company research summary (CompanyResearch)
+
+    Create a detailed interview preparation document that includes:
+    - A brief summary of the job and why it fits the candidate
+    - A snapshot of the tailored resume, focusing on the most relevant points
+    - A concise summary of the company, product, and values
+    - Predicted interview questions based on job and company
+    - Custom questions the candidate can ask the interviewer
+    - Advice on tone, focus areas, and any red flags to watch out for
+
+    The document should be clean, clear, and designed to give the candidate a strategic edge in the interview.
+
+    The document should not be too short, spend as much time as needed to make it comprehensive.
+  expected_output: >
+    A Markdown document titled "Interview Prep: $CompanyName – $JobTitle" with the following sections:
+    - ## Job Overview
+    - ## Why This Job Is a Fit
+    - ## Resume Highlights for This Role
+    - ## Company Summary
+    - ## Predicted Interview Questions
+    - ## Questions to Ask Them
+    - ## Concepts To Know/Review
+    - ## Strategic Advice
+
+  agent: interview_prep_agent
+  output_file: output/interview_prep.md

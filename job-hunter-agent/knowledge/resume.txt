@@ -1,0 +1,84 @@
+# Juan Srisaiwong
+**Full Stack Developer**
+
+📧 juan.srisaiwong@email.com | 📱 +34 612 345 678  
+🌐 LinkedIn: linkedin.com/srisaiwong | GitHub: github.com/srisaiwong  
+📍 Copenhagen, Denmark
+
+---
+
+## Professional Summary
+
+Passionate Full Stack Developer with 3 years of experience building scalable web applications and modern user interfaces. Proficient in JavaScript ecosystem with expertise in React, Node.js, and cloud technologies. Strong problem-solving skills and collaborative approach to delivering high-quality software solutions.
+
+---
+
+## Technical Skills
+
+**Frontend:** React, Vue.js, HTML5, CSS3, Sass, TypeScript, JavaScript (ES6+), Bootstrap, Tailwind CSS  
+**Backend:** Node.js, Express.js, Python, Django, RESTful APIs, GraphQL  
+**Databases:** PostgreSQL, MySQL, MongoDB, Redis  
+**Cloud & DevOps:** AWS (EC2, S3, Lambda), Docker, CI/CD, Git, GitHub Actions  
+**Tools:** VS Code, Postman, Figma, Jira, Slack
+
+---
+
+## Professional Experience
+
+### Full Stack Developer
+**TechSolutions Madrid** | Madrid, Spain | *March 2022 - Present*
+
+- Developed and maintained 5+ web applications serving over 10,000 users using React and Node.js
+- Implemented responsive designs that improved mobile user engagement by 40%
+- Built RESTful APIs and integrated third-party services, reducing data processing time by 25%
+- Collaborated with cross-functional teams using Agile methodologies
+- Optimized database queries resulting in 30% faster page load times
+
+### Junior Full Stack Developer
+**StartupLab Barcelona** | Barcelona, Spain | *June 2021 - February 2022*
+
+- Contributed to the development of an e-commerce platform using Vue.js and Express.js
+- Implemented user authentication and authorization systems
+- Participated in code reviews and maintained high code quality standards
+- Fixed bugs and implemented new features based on user feedback
+- Assisted in deployment processes and server maintenance
+
+---
+
+## Education
+
+### Bachelor's Degree in Computer Science
+**Universidad Politécnica de Madrid** | Madrid, Spain | *2017 - 2021*
+
+**Relevant Coursework:** Data Structures, Algorithms, Database Systems, Software Engineering, Web Development
+
+---
+
+## Projects
+
+### E-Commerce Dashboard
+*React, Node.js, PostgreSQL, AWS*
+- Built a comprehensive admin dashboard for managing products, orders, and customers
+- Implemented real-time analytics and reporting features
+- Deployed on AWS with automated CI/CD pipeline
+
+### Task Management App
+*Vue.js, Express.js, MongoDB*
+- Developed a collaborative task management application with real-time updates
+- Integrated user authentication and role-based permissions
+- Implemented drag-and-drop functionality and notification system
+
+---
+
+## Languages
+
+**Spanish:** Native  
+**English:** Professional (C1)  
+**Catalan:** Conversational (B2)
+
+---
+
+## Certifications
+
+- AWS Certified Developer - Associate (2023)
+- React Developer Certification - Meta (2022)
