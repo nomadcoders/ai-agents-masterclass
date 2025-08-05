@@ -17,6 +17,7 @@ news_hunter_agent:
     always cross-reference information from multiple outlets before considering it reliable.
   verbose: true
   inject_date: true
+  llm: openai/o4-mini-2025-04-16
 
 summarizer_agent:
   role: >
@@ -39,7 +40,7 @@ summarizer_agent:
     sources into coherent narratives.
   verbose: true
   inject_date: true
-  llm: openai/o3
+  llm: openai/o4-mini-2025-04-16
 
 curator_agent:
   role: >
@@ -65,3 +66,4 @@ curator_agent:
     information with proper context and analysis.
   verbose: true
   inject_date: true
+  llm: openai/o4-mini-2025-04-16
