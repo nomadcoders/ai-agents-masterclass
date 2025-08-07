@@ -1,4 +1,5 @@
 import os, re
+import datetime
 from firecrawl import FirecrawlApp, ScrapeOptions
 
 
@@ -15,7 +16,7 @@ def web_search_tool(query: str):
 
     response = app.search(
         query=query,
-        limit=5,
+        limit=2,
         scrape_options=ScrapeOptions(
             formats=["markdown"],
         ),
@@ -44,3 +45,10 @@ def web_search_tool(query: str):
         cleaned_chunks.append(cleaned_result)
 
     return cleaned_chunks
+
+
+def save_report_to_md(content: str) -> str:
+    """Save report content to report.md file."""
+    with open("report.md", "w") as f:
+        f.write(content)
+    return "report.md"
