@@ -152,6 +152,7 @@ name = "chatgpt-clone"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "graphviz" },
     { name = "openai-agents", extra = ["viz"] },
     { name = "python-dotenv" },
     { name = "streamlit" },
@@ -164,6 +165,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "graphviz", specifier = ">=0.21" },
     { name = "openai-agents", extras = ["viz"], specifier = ">=0.2.6" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
     { name = "streamlit", specifier = ">=1.48.0" },
