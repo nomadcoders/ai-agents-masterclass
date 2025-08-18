@@ -13,6 +13,7 @@ from agents import (
     FileSearchTool,
     ImageGenerationTool,
     CodeInterpreterTool,
+    HostedMCPTool,
 )
 
 client = OpenAI()
@@ -50,6 +51,15 @@ if "agent" not in st.session_state:
                     "container": {
                         "type": "auto",
                     },
+                }
+            ),
+            HostedMCPTool(
+                tool_config={
+                    "server_url": "https://mcp.context7.com/mcp",
+                    "type": "mcp",
+                    "server_label": "Context7",
+                    "server_description": "Use this to get the docs from software projects.",
+                    "require_approval": "never",
                 }
             ),
         ],
@@ -97,6 +107,12 @@ async def paint_history():
             elif message_type == "code_interpreter_call":
                 with st.chat_message("ai"):
                     st.code(message["code"])
+            elif message_type == "mcp_list_tools":
+                with st.chat_message("ai"):
+                    st.write(f"Listed {message["server_label"]}'s tools")
+            elif message_type == "mcp_call":
+                with st.chat_message("ai"):
+                    st.write(f"Called {message["server_label"]}'s {message["name"]} with args {message["arguments"]}")
 
 
 asyncio.run(paint_history())
@@ -134,8 +150,14 @@ def update_status(status_container, event):
             "🎨 Drawing image...",
             "running",
         ),
-        "response.code_interpreter_call_code.done": ("🤖 Ran code.", "complete"),
-        "response.code_interpreter_call.completed": ("🤖 Ran code.", "complete"),
+        "response.code_interpreter_call_code.done": (
+            "🤖 Ran code.",
+            "complete",
+        ),
+        "response.code_interpreter_call.completed": (
+            "🤖 Ran code.",
+            "complete",
+        ),
         "response.code_interpreter_call.in_progress": (
             "🤖 Running code...",
             "complete",
@@ -143,6 +165,30 @@ def update_status(status_container, event):
         "response.code_interpreter_call.interpreting": (
             "🤖 Running code...",
             "complete",
+        ),
+        "response.mcp_call.completed": (
+            "⚒️ Called MCP tool",
+            "complete",
+        ),
+        "response.mcp_call.failed": (
+            "⚒️ Error calling MCP tool",
+            "complete",
+        ),
+        "response.mcp_call.in_progress": (
+            "⚒️ Calling MCP tool...",
+            "running",
+        ),
+        "response.mcp_list_tools.completed": (
+            "⚒️ Listed MCP tools",
+            "complete",
+        ),
+        "response.mcp_list_tools.failed": (
+            "⚒️ Error listing MCP tools",
+            "complete",
+        ),
+        "response.mcp_list_tools.in_progress": (
+            "⚒️ Listing MCP tools",
+            "running",
         ),
         "response.completed": (" ", "complete"),
     }
