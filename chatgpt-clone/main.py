@@ -165,11 +165,19 @@ async def run_agent(message):
         cache_tools_list=True,
     )
 
-    async with yfinance_server:
+    timezone_server = MCPServerStdio(
+        params={
+            "command": "uvx",
+            "args": ["mcp-server-time", "--local-timezone=America/New_York"],
+        }
+    )
+
+    async with yfinance_server, timezone_server:
 
         agent = Agent(
             mcp_servers=[
                 yfinance_server,
+                timezone_server,
             ],
             name="ChatGPT Clone",
             instructions="""
