@@ -48,6 +48,3 @@ def web_search_tool(query: str):
         cleaned_chunks.append(cleaned_result)
 
     return cleaned_chunks
-
-
-print(web_search_tool("potatos"))
