@@ -55,7 +55,10 @@ async def generate_narrations(
             inline_data=types.Blob(mime_type="audio/mpeg", data=audio_data)
         )
 
-        await tool_context.save_artifact(filename=filename, artifact=artifact)
+        await tool_context.save_artifact(
+            filename=filename,
+            artifact=artifact,
+        )
 
         generated_narrations.append(
             {
