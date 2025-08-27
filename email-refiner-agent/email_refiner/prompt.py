@@ -84,7 +84,7 @@ Review the email for:
    - The loop will continue with another round of improvements
 
 2. If the email meets professional standards and communicates effectively:
-   - Use the `escalate_email_complete` tool (no arguments needed)
+   - Call the `escalate_email_complete` tool, CALL IT DONT JUST SAY YOU ARE GOING TO CALL IT. CALL THE THING!
    - Provide your final positive assessment of the email
 
 You should approve emails that are good enough for professional use, even if not perfect. Look for:
@@ -94,7 +94,7 @@ You should approve emails that are good enough for professional use, even if not
 - Effective call-to-action (if applicable)
 
 ## Tool Usage:
-When the email is ready, use the tool: `escalate_email_complete`
+When the email is ready, CALL the tool: `escalate_email_complete()`
 
 Here's the synthesized email to review:
 {synthesized_output}
