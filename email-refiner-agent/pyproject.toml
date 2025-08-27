@@ -5,9 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "google-adk>=1.12.0",
+    "google-adk[eval]>=1.12.0",
     "google-genai>=1.31.0",
     "litellm>=1.76.0",
+    "requests>=2.32.5",
+    "sseclient-py>=1.8.0",
 ]
 
 [dependency-groups]

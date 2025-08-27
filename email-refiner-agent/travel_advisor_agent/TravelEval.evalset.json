@@ -1,0 +1,373 @@
+{
+  "eval_set_id": "TravelEval",
+  "name": "TravelEval",
+  "description": null,
+  "eval_cases": [
+    {
+      "eval_id": "TokyoAugust",
+      "conversation": [
+        {
+          "invocation_id": "e-798398d6-e860-408f-a665-b8821f953687",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Hi!"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Hello! How can I assist you with your travel plans today?"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302058.016022
+        },
+        {
+          "invocation_id": "e-e934022e-4274-4501-8cc8-aef20c4d0b31",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "I want to go to Tokyo in August"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "That sounds exciting! Tokyo is a vibrant city with plenty to see and do. Let me help you with some essential information to plan your trip.\n\n1. **Weather in August:** I'll check the typical weather conditions during August in Tokyo so you can pack accordingly.\n\n2. **Local Attractions:** I can provide you with a list of must-see attractions and points of interest in Tokyo.\n\n3. **Currency Exchange:** I can also look up the current exchange rate for converting your currency to Japanese Yen.\n\nWould you like me to get all this information for you?"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302065.935937
+        },
+        {
+          "invocation_id": "e-7429922d-6a38-405a-9d26-f53f707d682e",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Yes."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Here's some helpful information for your trip to Tokyo in August:\n\n### Weather in Tokyo\n- **Temperature:** 22°C (about 72°F)\n- **Condition:** Partly cloudy\n- **Humidity:** 65%\n- **Wind:** 12 km/h\n- **Forecast:** Mild weather with occasional clouds expected throughout the day.\n\n### Local Attractions\nTokyo is full of amazing places to visit. Here are some top attractions you might want to consider:\n\n1. **Tokyo Tower**: A famous communications and observation tower with a beautiful view of the city. Rating: 4.5\n2. **Senso-ji**: An ancient Buddhist temple, offering a glimpse into the cultural and historical aspects of Japan. Rating: 4.6\n3. **Shibuya Crossing**: Known as the busiest pedestrian crossing in the world, definitely a must-see! Rating: 4.4\n4. **Meiji Shrine**: A serene Shinto shrine dedicated to Emperor Meiji. Rating: 4.7\n5. **Tokyo Skytree**: Another iconic broadcasting and observation tower, offering breathtaking views. Rating: 4.6\n\n### Currency Exchange\n- **Exchange Rate:** 1 USD = 149.5 JPY\n- This means that if you convert 1 USD, you'll get approximately 149.5 JPY.\n\nFeel free to ask if you need more information or further assistance with your travel plans!"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "id": "call_BsQ8CrvJyWYwpIsPeFn0odtA",
+                "args": {
+                  "location": "Tokyo"
+                },
+                "name": "get_weather"
+              },
+              {
+                "id": "call_4tN3plFludb86jO0ojiHxVFJ",
+                "args": {
+                  "location": "Tokyo"
+                },
+                "name": "get_local_attractions"
+              },
+              {
+                "id": "call_7BPdcftMoKwXFSOgLsuK7qMs",
+                "args": {
+                  "from_currency": "USD",
+                  "to_currency": "JPY"
+                },
+                "name": "get_exchange_rate"
+              }
+            ],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302074.594582
+        }
+      ],
+      "session_input": {
+        "app_name": "travel_advisor_agent",
+        "user_id": "user",
+        "state": {}
+      },
+      "creation_timestamp": 1756302125.373034
+    },
+    {
+      "eval_id": "Paris.Sept.OneByOne",
+      "conversation": [
+        {
+          "invocation_id": "e-00384eb7-f487-4e63-a443-aa82fd12b891",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Hi!"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Hello! How can I assist you with your travel plans today?"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302770.643573
+        },
+        {
+          "invocation_id": "e-dd464fde-9bdc-4029-acca-79188d1950c7",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "What is the weather in Paris in September."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "In September, the weather in Paris is generally mild and pleasant. Currently, it's 22°C with partly cloudy skies. There's a humidity level of 65%, and the wind is blowing at 12 km/h. Throughout the day, you can expect mild weather with occasional clouds. It's a great time for sightseeing or enjoying outdoor cafes! If you have any other questions or need additional information about your trip, feel free to ask."
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "id": "call_b8rM1lJhFFThc9O3zzOtHVhv",
+                "args": {
+                  "location": "Paris, France"
+                },
+                "name": "get_weather"
+              }
+            ],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302782.234563
+        },
+        {
+          "invocation_id": "e-b05591d4-306f-4435-91cb-e2032c63f98c",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "What about the currency?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "The current exchange rate for USD to EUR is approximately 0.92. This means that 1 US Dollar would convert to about 0.92 Euros. If you're planning to travel to Paris, it's a good idea to keep this rate in mind for budgeting and expenses.\n\nIf you need any assistance with currency exchange, local attractions, or anything else for your trip to Paris, feel free to let me know!"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "id": "call_klI8IhPWHnEu8DbHvHYY8678",
+                "args": {
+                  "from_currency": "USD",
+                  "to_currency": "EUR",
+                  "amount": 1
+                },
+                "name": "get_exchange_rate"
+              }
+            ],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302790.098091
+        },
+        {
+          "invocation_id": "e-10f522df-341f-408a-b02c-4ecc696a10f4",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "And landmarks?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "Here are some popular landmarks and attractions you might want to visit in Paris:\n\n1. **Eiffel Tower**: An iconic symbol of Paris, offering stunning views of the city from the top.\n\n2. **Louvre Museum**: Home to thousands of works of art, including the Mona Lisa and the Venus de Milo.\n\n3. **Notre-Dame Cathedral**: A masterpiece of French Gothic architecture, with intricate sculptures and stained-glass windows.\n\n4. **Montmartre**: This historic district is known for its bohemian atmosphere, the Sacré-Cœur Basilica, and artistic history.\n\n5. **Champs-Élysées and Arc de Triomphe**: A famous avenue that's perfect for shopping and dining, ending at the impressive Arc de Triomphe.\n\n6. **Seine River Cruise**: A relaxing way to see many of Paris's famous sites from the water.\n\n7. **Palace of Versailles**: Although not in the city center, it's a must-visit for its grand palace and amazing gardens.\n\nThese landmarks offer a mix of cultural, historical, and modern experiences that capture the essence of Paris. If you have any specific interests or need more recommendations, feel free to ask!"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "id": "call_B8IQkCorcuUFyKJfprJ98Fr8",
+                "args": {
+                  "location": "Paris, France"
+                },
+                "name": "get_local_attractions"
+              }
+            ],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1756302800.331168
+        }
+      ],
+      "session_input": {
+        "app_name": "travel_advisor_agent",
+        "user_id": "user",
+        "state": {}
+      },
+      "creation_timestamp": 1756302826.731252
+    }
+  ],
+  "creation_timestamp": 1756301635.211605
+}
