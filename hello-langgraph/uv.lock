@@ -298,6 +298,7 @@ name = "hello-langgraph"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "aiosqlite" },
     { name = "grandalf" },
     { name = "langchain", extra = ["openai"] },
     { name = "langgraph" },
@@ -313,6 +314,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "aiosqlite", specifier = ">=0.21.0" },
     { name = "grandalf", specifier = ">=0.8" },
     { name = "langchain", extras = ["openai"], specifier = ">=0.3.27" },
     { name = "langgraph", specifier = ">=0.6.6" },
