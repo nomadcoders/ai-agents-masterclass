@@ -62,8 +62,3 @@ graph_builder.add_edge("assing_priority", "draft_response")
 graph_builder.add_edge("draft_response", END)
 
 graph = graph_builder.compile()
-
-
-result = graph.invoke({"email": "i have an offer for you!"})
-
-print(result)
