@@ -836,6 +836,32 @@ wheels = [
 ]
 
 [[package]]
+name = "langgraph-supervisor"
+version = "0.0.29"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "langgraph" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/78/f0/fc8d5b5926caf3becfc75ff399c4b855daaff957f804973942457864ce94/langgraph_supervisor-0.0.29.tar.gz", hash = "sha256:0ab6e06e102096071d605268a4138084b87128f0c965e1544f77a7d4f65ca16b", size = 21095, upload-time = "2025-07-28T14:16:23.079Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/61/15/e3b4ad69b2a5fd6ba3d92bcca92b59ebd3a40f2a55751946728506ba618e/langgraph_supervisor-0.0.29-py3-none-any.whl", hash = "sha256:611dd4545f566f690d30004af3742887ec78134921118706ae7eeb12ce77763d", size = 16039, upload-time = "2025-07-28T14:16:22.259Z" },
+]
+
+[[package]]
+name = "langgraph-swarm"
+version = "0.0.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "langgraph" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3a/ca/93d0628bc074af05a05346e9e26fa16d3e3c87a8a7d73e01050a01702762/langgraph_swarm-0.0.14.tar.gz", hash = "sha256:fa780e8c8b3431349dd314717dfc439c923b7568c7212c9f41f0b348d7c022b0", size = 12306, upload-time = "2025-07-28T14:26:03.911Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bb/76/6e53c7f087e18eb01b692cfd35602900d4e961ab06fb0e1bb4409518288b/langgraph_swarm-0.0.14-py3-none-any.whl", hash = "sha256:dff76798d8d2bc2b6cf89bcb02027aeede8c595b9487364ae023a2627f97c48c", size = 10127, upload-time = "2025-07-28T14:26:03.048Z" },
+]
+
+[[package]]
 name = "langsmith"
 version = "0.4.31"
 source = { registry = "https://pypi.org/simple" }
@@ -875,6 +901,8 @@ dependencies = [
     { name = "langgraph" },
     { name = "langgraph-checkpoint-sqlite" },
     { name = "langgraph-cli", extra = ["inmem"] },
+    { name = "langgraph-supervisor" },
+    { name = "langgraph-swarm" },
     { name = "pytest" },
     { name = "python-dotenv" },
 ]
@@ -891,6 +919,8 @@ requires-dist = [
     { name = "langgraph", specifier = "==0.6.6" },
     { name = "langgraph-checkpoint-sqlite", specifier = "==2.0.11" },
     { name = "langgraph-cli", extras = ["inmem"], specifier = "==0.4.0" },
+    { name = "langgraph-supervisor", specifier = ">=0.0.29" },
+    { name = "langgraph-swarm", specifier = ">=0.0.14" },
     { name = "pytest", specifier = "==8.4.2" },
     { name = "python-dotenv", specifier = "==1.1.1" },
 ]
