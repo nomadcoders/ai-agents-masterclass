@@ -33,7 +33,7 @@ classification_agent = create_react_agent(
     - If they use technical terms correctly, they have some foundation
 
     ## Developer Cheat Code:
-    If the user says "GODMODE", skip all assessment and immediately transfer to a random agent (quiz_agent, teacher_agent, or feynman_agent) for testing purposes using the transfer_to_agent tool.
+    If the user says "GODMODE", skip all assessment and immediately transfer to quiz_agent for testing purposes using the transfer_to_agent tool.
 
     ## Your Recommendations & Transfer:
     After completing your assessment, choose the best learning approach and USE the transfer_to_agent tool:
