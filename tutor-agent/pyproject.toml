@@ -1,0 +1,23 @@
+[project]
+name = "tutor-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "firecrawl-py==2.16",
+    "grandalf==0.8",
+    "langchain[openai]==0.3.27",
+    "langgraph==0.6.6",
+    "langgraph-checkpoint-sqlite==2.0.11",
+    "langgraph-cli[inmem]==0.4.0",
+    "langgraph-supervisor==0.0.29",
+    "langgraph-swarm==0.0.14",
+    "pytest==8.4.2",
+    "python-dotenv==1.1.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel==6.30.1",
+]
